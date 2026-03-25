@@ -1,0 +1,18 @@
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"*/migrations/*.py" = ["E501", "F401"]
+"devlog/settings.py" = ["E501"]
+
+[tool.coverage.run]
+omit = [
+  "*/migrations/*",
+  "devlog/settings.py",
+  "devlog/wsgi.py",
+  "devlog/asgi.py",
+  "manage.py",
+]

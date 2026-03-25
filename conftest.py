@@ -1,7 +1,5 @@
 # conftest.py
-import django
 import pytest
-from django.conf import settings
 
 
 @pytest.fixture(scope="session")

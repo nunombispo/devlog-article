@@ -2,3 +2,10 @@
 /__pycache__
 /db.sqlite3
 /venv
+/.venv
+venv/
+.venv/
+/cpython
+/cpython/
+cpython/
+cpython-*/
