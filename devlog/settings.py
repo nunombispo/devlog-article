@@ -30,6 +30,10 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "localhost,testserver").split(",")
 
+# Ensure stable primary key type across Django versions.
+# Django 6 defaults to an AutoField unless you opt into BigAutoField.
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
 
 # Application definition
 
