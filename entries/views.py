@@ -1,5 +1,6 @@
 # entries/views.py
 from rest_framework import mixins, viewsets
+
 from .models import Entry
 from .serializers import EntrySerializer
 
