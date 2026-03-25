@@ -14,10 +14,7 @@ def api_client():
 
 @pytest.fixture
 def sample_entry(db):
-    return Entry.objects.create(
-        title="First deployment",
-        body="Shipped the initial version of DevLog."
-    )
+    return Entry.objects.create(title="First deployment", body="Shipped the initial version of DevLog.")
 
 
 @pytest.mark.django_db
@@ -41,10 +38,7 @@ def test_list_entries_returns_existing(api_client, sample_entry):
 @pytest.mark.django_db
 def test_create_entry(api_client):
     url = reverse("entry-list")
-    payload = {
-        "title": "Second deployment",
-        "body": "Added pagination to the entries endpoint."
-    }
+    payload = {"title": "Second deployment", "body": "Added pagination to the entries endpoint."}
     response = api_client.post(url, payload, format="json")
 
     assert response.status_code == status.HTTP_201_CREATED
